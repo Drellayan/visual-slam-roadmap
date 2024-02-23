@@ -1,0 +1,107 @@
+### 1. Visual odometry - Nister 2004
+> **Visual Odometry** <br>
+David Nist ́er, Oleg Naroditsky, James Bergen <br>
+Sarnoff Corporation <br>
+CN5300, Princeton NJ 08530 USA
+
+>Nister等人首次提出术语“Visual Odometry”,[88] 因为它和车轮里程计的概念相似。他们提出了在单目和双目立体系统中通过视觉输入获取相机的运动的开创性方法。他们专注于在存在异常值（假特征匹配）的情况下估计相机运动的问题，并且提出了使用**RANSAC**[44]的异常值的去除方案。也是第一个在**所有帧**中跟踪特征而不是在连续帧中匹配特征的方案。这具有避免在基于互相关的跟踪期间的特征漂移的益处[101]。他们还提出了使用**3D到2D重投影误差的基于RANSAC的运动估计**（参见“运动估计”部分），而不是使用3D点之间的欧几里德距离误差。与3D到3D误差相比，使用3D到2D重新投影误差可以提供更好的估计[56]。
+
+#### Abstract
++ a stereo head or a single moving camera based on video input. 
+视频端作输入的单目或立体相机 <br>
+输入要求（如视频分辨率码率）720 × 240 resolution/13Hz
++ The front end of the system is a feature tracker. <br>
+  Point features are matched between pairs of frames and linked into image trajectories at video rate.
++ <font color=red>？</font> a geometric hypothesize-and-test architecture <br>
+运动估计 visual odometry, i.e. motion estimates from visual input alone
++ GPS, inertia sensors, wheel encoders, etc 融合
++ an autonomous ground vehicle
+
+#### 1. Introduction
++ real-time vision processing
++ All of the processing runs at video rates on a 1GHz Pentium III class machine.
+
+#### 2. Feature Detection
++ Harris corners
+
+#### 3. Feature Matching
++ A feature in one image is matched to every feature within a fixed distance from it in the next image.
++ uniform weighting
++ mutual consistency check <br>
+  highest normalized correlation
+
+#### 4. Robust Estimation
++ error accumulation and propagation
++ <font color=red>？</font> chooses which frames to use for relative orientation
+
+4.3 <font color=red>？</font> Preemptive RANSAC and Scoring
++ a preemptive scoring scheme
++ We assume Cauchy distribution for the reprojection errors
++ For scoring the three-view relative pose estimates, we use a trifocal Sampson error
+
+#### 5. Results
++ ground truth <br>
+with a Differential Global Positioning System (DGPS) as well as a high precision Inertial Navigation System (INS)
++ a horizontal field of view of 50◦, and image fields of 720 × 240 resolution
+<br>the visual odometry's frame processing rate was limited to around 13Hz
+>![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/VO5.png "Figure5")
+<br> Figure 5: Vehicle positions estimated with visual odometry (left) and DGPS (right). These plots show that the vehicle path is accurately recovered by visual odometry during tight cornering as well as extended operation. In this example the vehicle completes three tight laps of diameter about 20 meters (travelling 184 meters total) and returns to the same location. The error in distance between the endpoints of the trip is only 4.1 meters.
+
+>![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/VO6.png)
+<br> Figure 6: Visual odometry vehicle position (light red) superimposed on DGPS output (dark blue). No a priori knowledge of the motion was used to produce the visual odometry. A completely general 3D trajectory was estimated in all our experiments. In particular, we did not explicitly force the trajectory to stay upright or within a certain height of the ground plane. The fact that it did anyway is a strong verification of the robustness and accuracy of the result.
+
+>![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/VO7.png)
+<br> Figure 7: Yaw angle in degrees from INS and visual odometry. The correspondence is readily apparent. In most cases, visual odometry yields subdegree accuracy in vehicle heading recovery. The accumulated yaw angle is shown, except for on the bottom right, were the frame to frame yaw angle discrepancy is shown.
+
+#### 6. Summary and Conclusions
++ feature tracking and robust estimation
+
+***
+### 2. MSCKF - Mourikis 2007
+> **A Multi-State Constraint Kalman Filter for Vision-aided Inertial Navigation**
+<br> Anastasios I. Mourikis and Stergios I. Roumeliotis
+<br> The authors are with the Dept. of Computer Science & Engineering, University of Minnesota, Minneapolis, MN 55455. Emails:{mourikis|stergios}@cs.umn.edu
+
+#### Abstract
++ an Extended Kalman Filter (EKF)-based algorithm for real-time vision-aided inertial navigation
+<br> VIO based on EKF
++ <font color=red>？</font> This measurement model does not require including the 3D feature position in the state vector of the EKF
++ computational complexity only linear in the number of features
+
+#### I. INTRODUCTION
++ MEMS-based inertial sensors
+<br> 将IMU技术普及
++ where GPS signals are unreliable
+<br> 像室内这种有遮挡的地方
++ images are high-dimensional measurements, with rich information content
++ geometric constraints
+<br> <font color=red>？</font> expresses these constraints without including the 3D feature position in the filter state vector
+<br> 这种不包含三维特征位置的方法使时间复杂度达到了线性
+#### II. RELATED WORK
++ estimate the pose of the camera only (i.e., do not jointly estimate the feature positions)
+<br> 提高速度
+#### III. ESTIMATOR DESCRIPTION
+**B. Propagation**  
+IMU状态的更新
+#### IV. EXPERIMENTAL RESULTS
+
+#### V. CONCLUSIONS
+
+#### APPENDIX
+
+***
+### 3. PTAM - Klein & Murray 2007
+> **Parallel Tracking and Mapping for Small AR Workspaces**  
+> Georg Klein, David Murray  
+> Active Vision Laboratory Department of Engineering Science University of Oxford
+#### ABSTRACT
+#### 1 INTRODUCTION
+#### 2 METHOD OVERVIEW IN THE CONTEXT OF SLAM
+#### 3 FURTHER RELATED WORK
+#### 4 THE MAP
+#### 5 TRACKING
+#### 6 MAPPING
+#### 7 RESULTS
+#### 8 LIMITATIONS AND FUTURE WORK
+#### 9 CONCLUSION
+
