@@ -93,10 +93,26 @@ IMU状态的更新
 ### 3. PTAM - Klein & Murray 2007
 > **Parallel Tracking and Mapping for Small AR Workspaces**  
 > Georg Klein, David Murray  
-> Active Vision Laboratory Department of Engineering Science University of Oxford
+> Active Vision Laboratory Department of Engineering Science University of Oxford  
+> code: https://www.robots.ox.ac.uk/~gk/PTAM/
++ PTAM是第一个使用非线性优化，而不是使用传统的滤波器作为后端的方案。它引入了关键帧机制：我们不必精细的处理每一幅图像，而是把几幅关键的图像串起来，然后优化其轨迹和地图。
++ 存在的明显缺陷是：场景小，跟踪容易丢失。
 #### ABSTRACT
++ split tracking and mapping on a dual-core computer  
+  可以对非实时的mapping部分使用computationally expensive batch optimisation
++ produces detailed maps with thousands of landmarks which can be tracked at frame-rate
 #### 1 INTRODUCTION
++ a comprehensive map is often not available
++ *extensible trac* in which the system attempts to add previously unknown scene elements to its initial map
++ a *remote expert* who can annotate the generated map
++ we treat the generated map as a sandbox in which virtual simulations can be created.  
+  we estimate a dominant plane (a virtual ground plane) from the mapped points
 #### 2 METHOD OVERVIEW IN THE CONTEXT OF SLAM
+* Tracking and Mapping are separated, and run in two parallel threads.
+* Mapping is based on keyframes, which are processed using batch techniques (Bundle Adjustment).
+* The map is densely intialised from a stereo pair (5-Point Algorithm)
+* New points are initialised with an epipolar search.
+* Large numbers (thousands) of points are mapped.
 #### 3 FURTHER RELATED WORK
 #### 4 THE MAP
 #### 5 TRACKING
