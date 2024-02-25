@@ -11,7 +11,31 @@
 **FAST关键点**
 
 **BRIEF描述子**
+
 ***
+
+## 7.3 2D-2D：对极几何
+### 7.3.1 对极约束
+![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/duiou.png)
+同时，如果不知道P的位置，那么当我们在第二幅图像上看时，连线e<sub>2</sub>p<sub>2</sub>（也就是第二幅图像中的极线）就是P可能出现的投影位置，也就是射线O<sub>1</sub>p<sub>1</sub>在第二个相机中的投影。
+
+基础矩阵(Fundamental Matrix)F 和本质矩阵(Essential Matrix)E
+<br> 相机内参在SLAM中通常是已知的，在SfM研究中则有可能是未知且有待估计的
+
+### 7.3.2 本质矩阵
+E实际上有5个自由度
+
+八点法  
+Improve accuracy of 8-point algorithm [Har97]
+
+奇异值分解本质矩阵，得到t与R
+<br> 引入谱定理
+<br> t的方向是奇异值0对应的奇异向量
+
+### 7.3.3 单应矩阵
+
+***
+
 ## 7.5 三角测量
 通过三角测量（Triangulation）（或三角化）的方法估计地图点的深度  
 三角测量是指，通过不同位置对同一个路标点进行观察，从观察到的位置推断路标点的距离。

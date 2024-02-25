@@ -116,6 +116,21 @@ IMU状态的更新
 #### 3 FURTHER RELATED WORK
 #### 4 THE MAP
 #### 5 TRACKING
+At every frame, the system performs the following two-stage tracking procedure: 
+1. A new frame is acquired from the camera, and a prior pose estimate is generated from a motion model. 
+2. Map points are projected into the image according to the frame's prior pose estimate. 
+3. A small number (50) of the coarsest-scale features are searched for in the image. 
+4. The camera pose is updated from these coarse matches. 
+5. A larger number (1000) of points is re-projected and searched for in the image. 
+6. A final pose estimate for the frame is computed from all the matches found.
+
++ a Unibrain Fire-i video camera equipped with a 2.1mm wide-angle lens  
+delivers 640×480 pixel YUV411 frames at 30Hz
++ a four-level image pyramid  
+  the FAST-10 [23] corner detector  
+  without non-maximal suppression
++ a decaying velocity model
+
 #### 6 MAPPING
 #### 7 RESULTS
 #### 8 LIMITATIONS AND FUTURE WORK
