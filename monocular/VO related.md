@@ -16,7 +16,7 @@
 
 ## 7.3 2D-2D：对极几何
 ### 7.3.1 对极约束
-![](/img/duiou.png)
+![](/monocular/img/duiou.png)
 同时，如果不知道P的位置，那么当我们在第二幅图像上看时，连线e<sub>2</sub>p<sub>2</sub>（也就是第二幅图像中的极线）就是P可能出现的投影位置，也就是射线O<sub>1</sub>p<sub>1</sub>在第二个相机中的投影。
 
 基础矩阵(Fundamental Matrix)F 和本质矩阵(Essential Matrix)E
@@ -42,7 +42,7 @@ Improve accuracy of 8-point algorithm [Har97]
 通过三角测量（Triangulation）（或三角化）的方法估计地图点的深度  
 三角测量是指，通过不同位置对同一个路标点进行观察，从观察到的位置推断路标点的距离。
 
-![](/img/7.5.jpeg)
+![](/monocular/img/7.5.jpeg)
 
 当然，由于噪声的存在，我们估计得的R,t不一定精确使上式为零，所以更常见的做法是求最小二乘解而不是直接的解。
 <br> [[学习SLAM ]单目vo中的深度确定方法--三角测量](https://blog.csdn.net/KYJL888/article/details/107222533)
@@ -98,7 +98,7 @@ PTAM主要分为这几部分：
 
 缺点：场景小，跟踪容易丢失。
 
-![](/img/ptam1.png)
+![](/monocular/img/ptam1.png)
 
 [PTAM跟踪过程中的旋转预测方法](https://zhuanlan.zhihu.com/p/20302059?refer=computercoil)
 <br> PTAM在进行跟踪的每一帧都会首先调用一个CalcSBIRotation的方法，最开始读PTAM代码我总是很疑惑这个方法的作用。最后发现这个方法会计算一下当前帧相对于上一帧的Rotation。也就是旋转角度。计算完毕后再根据这个旋转角度进行调整，然后使用基于SSD的跟踪算法。因为预先计算了Rotation，当然SSD的结果也就会更加准确。当用户旋转摄像头的时候也就更加不容易丢失跟踪目标。
