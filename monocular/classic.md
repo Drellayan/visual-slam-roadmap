@@ -129,7 +129,7 @@ delivers 640×480 pixel YUV411 frames at 30Hz
 + a four-level image pyramid  
   the FAST-10 [23] corner detector  
   without non-maximal suppression
-+ a decaying velocity model
++ ? a decaying velocity model
 
 #### 6 MAPPING
 #### 7 RESULTS

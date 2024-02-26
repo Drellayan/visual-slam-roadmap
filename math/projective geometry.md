@@ -1,3 +1,7 @@
+### 空间平面方程
+<math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi mathvariant="normal">n</mi><mi mathvariant="normal">T</mi></msup></math>
+$$n^{T}(P-P_{0})=0$$   
+***
 ### 反对称矩阵
 ![](/img/fandui.png)
 
