@@ -1,10 +1,10 @@
 ### 反对称矩阵
-![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/math/img/fandui.png)
+![](/img/fandui.png)
 
 ***
 
 ### 三维旋转矩阵
-![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/math/img/rota.jpg)
+![](/img/rota.jpg)
 ***
 ## 9. 极点极线
 

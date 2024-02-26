@@ -44,13 +44,13 @@ CN5300, Princeton NJ 08530 USA
 with a Differential Global Positioning System (DGPS) as well as a high precision Inertial Navigation System (INS)
 + a horizontal field of view of 50◦, and image fields of 720 × 240 resolution
 <br>the visual odometry's frame processing rate was limited to around 13Hz
->![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/VO5.png "Figure5")
+>![](/img/VO5.png "Figure5")
 <br> Figure 5: Vehicle positions estimated with visual odometry (left) and DGPS (right). These plots show that the vehicle path is accurately recovered by visual odometry during tight cornering as well as extended operation. In this example the vehicle completes three tight laps of diameter about 20 meters (travelling 184 meters total) and returns to the same location. The error in distance between the endpoints of the trip is only 4.1 meters.
 
->![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/VO6.png)
+>![](/img/VO6.png)
 <br> Figure 6: Visual odometry vehicle position (light red) superimposed on DGPS output (dark blue). No a priori knowledge of the motion was used to produce the visual odometry. A completely general 3D trajectory was estimated in all our experiments. In particular, we did not explicitly force the trajectory to stay upright or within a certain height of the ground plane. The fact that it did anyway is a strong verification of the robustness and accuracy of the result.
 
->![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/VO7.png)
+>![](/img/VO7.png)
 <br> Figure 7: Yaw angle in degrees from INS and visual odometry. The correspondence is readily apparent. In most cases, visual odometry yields subdegree accuracy in vehicle heading recovery. The accumulated yaw angle is shown, except for on the bottom right, were the frame to frame yaw angle discrepancy is shown.
 
 #### 6. Summary and Conclusions

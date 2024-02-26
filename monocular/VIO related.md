@@ -13,7 +13,7 @@ MSCKF不是将特征点加入到状态向量，而是将不同时刻的相机位
 历史的相机状态会不断移除，只维持固定个数的的相机位姿（Sliding Window）
 
 ### 4.MSCKF算法步骤
-![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/msckf1.jpg)
+![](/img/msckf1.jpg)
 图中X表示状态向量，P表示对应的协方差矩阵，红色表示当前步骤发生改变的量。
 1. 首先初始化状态向量和协方差
 2. 然后进行IMU积分，状态向量和协方差都发生改变

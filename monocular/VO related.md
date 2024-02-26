@@ -16,7 +16,7 @@
 
 ## 7.3 2D-2D：对极几何
 ### 7.3.1 对极约束
-![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/duiou.png)
+![](/img/duiou.png)
 同时，如果不知道P的位置，那么当我们在第二幅图像上看时，连线e<sub>2</sub>p<sub>2</sub>（也就是第二幅图像中的极线）就是P可能出现的投影位置，也就是射线O<sub>1</sub>p<sub>1</sub>在第二个相机中的投影。
 
 基础矩阵(Fundamental Matrix)F 和本质矩阵(Essential Matrix)E
@@ -40,7 +40,7 @@ Improve accuracy of 8-point algorithm [Har97]
 通过三角测量（Triangulation）（或三角化）的方法估计地图点的深度  
 三角测量是指，通过不同位置对同一个路标点进行观察，从观察到的位置推断路标点的距离。
 
-![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/7.5.jpeg)
+![](/img/7.5.jpeg)
 
 当然，由于噪声的存在，我们估计得的R,t不一定精确使上式为零，所以更常见的做法是求最小二乘解而不是直接的解。
 <br> [[学习SLAM ]单目vo中的深度确定方法--三角测量](https://blog.csdn.net/KYJL888/article/details/107222533)
@@ -96,4 +96,4 @@ PTAM主要分为这几部分：
 
 缺点：场景小，跟踪容易丢失。
 
-![](/home/yanhan/Projects/SLAMproject/visual-slam-roadmap/monocular/img/ptam1.png)
+![](/img/ptam1.png)
