@@ -22,6 +22,7 @@
 基础矩阵(Fundamental Matrix)F 和本质矩阵(Essential Matrix)E
 <br> 相机内参在SLAM中通常是已知的，在SfM研究中则有可能是未知且有待估计的
 
+$$E=t^{\wedge }R,   F=K^{-T}EK^{-1}=K^{-T}t^{\wedge }RK^{-1}$$          
 ### 7.3.2 本质矩阵
 E实际上有5个自由度
 
@@ -35,6 +36,8 @@ Improve accuracy of 8-point algorithm [Har97]
 ### 7.3.3 单应矩阵
 单应矩阵通常描述处于**共同平面**上的一些点在两张图像之间的变换关系。
 <br> 这些情况在无人机携带的俯视相机或扫地机携带的顶视相机中比较常见。
+
+$$ H=K(R-\frac{tn^{T}}{d})K^{-1}  $$
 
 ***
 
