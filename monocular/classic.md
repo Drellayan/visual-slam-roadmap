@@ -130,6 +130,12 @@ delivers 640×480 pixel YUV411 frames at 30Hz
   the FAST-10 [23] corner detector  
   without non-maximal suppression
 + ? a decaying velocity model
++ a calibrated camera projection model
+<br> which supports lenses exhibiting barrel radial distortion
+<br> the FOV-model of [6]
+
+相机标定/失真校正  
+"Straight lines have to be straight"
 
 #### 6 MAPPING
 #### 7 RESULTS
