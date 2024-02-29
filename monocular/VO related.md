@@ -95,7 +95,27 @@ $$ \min_{e}\left \| Ae \right \|_{2}^{2} = \min_{e}e^{T}A^{T}Ae   $$
 特征点的3D位置可以由三角化或者RGB-D相机的深度图确定。而在单目视觉里程计中，必须先进行初始化，才能使用PnP。
 
 ### 7.7.1 直接线性变换（DLT）
-t一共有12维，因此最少通过6对匹配点即可实现矩阵T的线性求解，这种方法称为DLT。当匹配点大于6对时，也可以使用SVD等方法对超定方程求最小二乘解。
+$$s\begin{pmatrix}
+ u_{1} 
+\\v_{1}
+ \\1
+\end{pmatrix}
+= T\begin{pmatrix}
+ X
+\\Y
+ \\Z
+ \\1
+
+\end{pmatrix}$$
+T一共有12维，因此最少通过6对匹配点即可实现矩阵T的线性求解，这种方法称为DLT。当匹配点大于6对时，也可以使用SVD等方法对超定方程求最小二乘解。
+<br> 这样求得的最小二乘解是没有尺度的
+
+### 7.7.2 P3P
+它仅使用3对匹配点，此外，还需要使用一对验证点。
+<br> 一旦3D点在相机坐标系下的坐标能够算出，我们就得到了3D-3D的对应点，把PnP问题转换为了ICP问题
+
+3个余弦角cos<a,b>, cos<b,c>, cos<a,c>是已知的
+
 ***
 ## PTAM related
 [Parallel Tracking And Mapping (PTAM) 特征点法 fast角点+灰度块匹配 2d-2d单应变换](https://github.com/Ewenwan/MVision/tree/master/vSLAM/PTAM)
