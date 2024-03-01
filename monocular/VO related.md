@@ -114,7 +114,17 @@ T一共有12维，因此最少通过6对匹配点即可实现矩阵T的线性求
 它仅使用3对匹配点，此外，还需要使用一对验证点。
 <br> 一旦3D点在相机坐标系下的坐标能够算出，我们就得到了3D-3D的对应点，把PnP问题转换为了ICP问题
 
-3个余弦角cos<a,b>, cos<b,c>, cos<a,c>是已知的
+$$(1-u)y^{2}-ux^{2}-\cos\left \langle b,c \right \rangle y+2uxy\cos\left \langle a,b \right \rangle +1=0   $$
+$$ (1-w)x^{2}-wy^{2}-\cos\left \langle a,c \right \rangle x+2wxy\cos\left \langle a,b \right \rangle +1=0   $$
+3个余弦角cos<a,b>, cos<b,c>, cos<a,c>是已知的。同时，u=BC<sup>2</sup>/AB<sup>2</sup>，w=AC<sup>2</sup>/AB<sup>2</sup>可以通过A,B,C在世界坐标系下的坐标算出，变换到相机坐标系下之后，这个比值并不改变。该式中的x=OA/OC，y=OB/OC是未知的，随着相机移动会发生变化。
+
+求该方程组的解析解是一个复杂的过程，需要用吴消元法。该方程最多可能得到4个解，但我们可以用验证点来计算最可能的解，得到A, B, C在相机坐标系下的3D坐标。然后，根据3D-3D的点对，计算相机的运动R, t。
+
+在SLAM中，通常的做法是先使用P3P/EPnP等方法估计相机位姿，再构建最小二乘优化问题对估计值进行调整（即进行Bundle Adjustment）。
+
+### 7.7.3 最小化重投影误差求解PnP
+这一类把相机和三维点放在一起进行最小化的问题，统称为Bundle Adjustment。
+
 
 ***
 ## PTAM related
