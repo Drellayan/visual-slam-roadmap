@@ -1,0 +1,26 @@
+## 6-PACK - Wang 2019
+> **6-PACK: Category-level 6D Pose Tracker with Anchor-Based Keypoints**
+<br> Chen Wang2, Roberto Mart ́ın-Mart ́ın1, Danfei Xu1, Jun Lv2, Cewu Lu2, Li Fei-Fei1, Silvio Savarese1, Yuke Zhu1,3
+<br> 1 Department of Computer Science, Stanford University, USA  
+2 Department of Computer Science, Shanghai Jiao Tong University, China  
+3 NVIDIA Research, USA  
+https://sites.google.com/view/6packtracking.
+
+### Abstract
+the NOCS **category-level** 6D pose estimation benchmark
+
+### I. INTRODUCTION
++ manipulation and navigation
++ instance-level 6D tracking
++ category-level 6D tracking
+<br> reduce category-level 6D tracking to a 3D detection and 6D pose estimation problem.
++ unsupervised learning approach
++ runs at 10Hz on a GTX1070 GPU
+
+Fig. 1
++ estimates object pose by accumulating relative pose changes over time
++ detect and track a set of 3D category-based keypoints (yellow dots) based on **anchors** (red dots)
++ compute the 6D object pose change via least-squares optimization
+
+### II. RELATED WORK
+### III. PROBLEM DEFINITION
