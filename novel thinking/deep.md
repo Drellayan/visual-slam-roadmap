@@ -35,4 +35,11 @@ Initialization
 + centroid of the keypoints is close to the instance centroid
 
 A. Anchor-based Attention Mechanism
++ Each anchor contains a feature representation of the surrounding volume around it
++ coarse attention-based anchor selection
++ fine-grained keypoint generation  
+as offset points from the selected anchor
++ combine color and geometric information into a fused feature
++ DenseFusion [45] feature embedding
++ detect the one closest to the object centroid
 
