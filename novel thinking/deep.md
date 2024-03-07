@@ -24,3 +24,15 @@ Fig. 1
 
 ### II. RELATED WORK
 ### III. PROBLEM DEFINITION
++ This setup was defined in NOCS
++ Following [41], we define 3D keypoints that are geometrically and semantically consistent throughout a temporal sequence
+### IV. MODEL
++ Each anchor(a coarse centroid of the object) summarizes the volume around it with a distanceweighted sum of the individual features of the RGB-D points in its surrounding
++ both symmetric and non-symmetric categories
+
+Initialization
++ We generate a set of keypoints and refine the given pose to be at the centroid of the set
++ centroid of the keypoints is close to the instance centroid
+
+A. Anchor-based Attention Mechanism
+
