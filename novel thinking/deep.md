@@ -43,3 +43,10 @@ as offset points from the selected anchor
 + DenseFusion [45] feature embedding
 + detect the one closest to the object centroid
 
+B. Unsupervised 3D Keypoints Generation
++ input the anchor feature
+<br> output containing an ordered list of keypoints
++ improved transferability on categorylevel orientation estimation
++ optimizing the multi-view consistency
+<br> by the ground truth inter-frame motion
+
