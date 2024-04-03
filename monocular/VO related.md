@@ -141,6 +141,15 @@ $$ T^{*}=arg\min_{T}\frac{1}{2}\sum_{i=1}^{n}\left \|u_{i}-\frac{1}{s_{i} }KTP_{
 
 只要场景中存在明暗变化（可以是渐变，不形成局部的图像梯度），直接法就能工作。根据使用像素的数量，直接法分为稀疏、稠密和半稠密三种。特征点法只能重构稀疏特征点（稀疏地图）。
 
+## 8.2 2D光流
+稀疏光流以Lucas-Kanade光流为代表  
+稠密光流以Horn-Schunck光流为代表
+### Lucas-Kanade光流
+灰度不变假设：同一个空间点的像素灰度值，在各个图像中是固定不变的。
+实际中很可能不成立。  
+假设某一个窗口内的像素具有相同的运动。
+
+
 ***
 ## PTAM related
 [Parallel Tracking And Mapping (PTAM) 特征点法 fast角点+灰度块匹配 2d-2d单应变换](https://github.com/Ewenwan/MVision/tree/master/vSLAM/PTAM)
